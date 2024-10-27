@@ -12,7 +12,7 @@ export default function Home({ allPostsData }) {
         <title>{siteTitle}</title>
       </Head>
       <section className={utilStyles.headingMd}>
-        <p>2003，Gemini，WeChat:samlin2025</p>
+        <p>AI信徒，LLM开发，全栈工程师，学生，25fall美</p>
         <p>home site：<a>xiaoyaoaiqima.github.io</a></p>
         <p>make meaningful life records</p>
       </section>
