@@ -13,7 +13,7 @@ export default function Home({ allPostsData }) {
       </Head>
       <section className={utilStyles.headingMd}>
         <p>AI信徒，LLM开发，全栈工程师，学生，准备留学</p>
-        <p>Blog site：<Link>xiaoyaoaiqima.github.io</Link></p>
+        <p>Blog site：<Link href="https://xiaoyaoaiqima.github.io">博客网站</Link></p>
         <p>知乎ID：Zhenlin Wu</p>
         <p>小红书ID：Zhenlin Wu</p>
       </section>
