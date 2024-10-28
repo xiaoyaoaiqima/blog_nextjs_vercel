@@ -12,9 +12,10 @@ export default function Home({ allPostsData }) {
         <title>{siteTitle}</title>
       </Head>
       <section className={utilStyles.headingMd}>
-        <p>AI信徒，LLM开发，全栈工程师，学生，25fall美</p>
-        <p>home site：<a>xiaoyaoaiqima.github.io</a></p>
-        <p>make meaningful life records</p>
+        <p>AI信徒，LLM开发，全栈工程师，学生，准备留学</p>
+        <p>Blog site：<Link>xiaoyaoaiqima.github.io</Link></p>
+        <p>知乎ID：Zhenlin Wu</p>
+        <p>小红书ID：Zhenlin Wu</p>
       </section>
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
         <h2 className={utilStyles.headingLg}>Blog</h2>
