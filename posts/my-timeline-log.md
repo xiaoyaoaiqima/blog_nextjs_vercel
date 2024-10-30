@@ -1,6 +1,6 @@
 ---
-title: '时间线记录'
-date: '2024-10-28'
+title: 'My Timeline Log'
+date: '2024-10-25'
 description: 
 ---
 
