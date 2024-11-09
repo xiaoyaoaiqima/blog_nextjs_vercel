@@ -11,10 +11,9 @@ description:
 
 ## 实习经历
 ### 网易云音乐 LLM开发 11.1 -- 至今
-- PE：应用少样本提升，思维链，⻆⾊扮演，模板化约束，提升模型的生成效果
-- 知识库构建，数据提取，文档切片，图片识别，表格识别
-- query优化，构建上下文，多路检索，检索结果rerank
-- 构建测试系统，template约束，LLM生成测试用例
+- 基于dify开发mlops平台，Nextjs，Flask
+- 策略优化和工程化，PE，知识库构建，memory
+- 搭建生产环境，发布镜像
 ### 网易数智  数据开发 7.1 -- 11.1
 数仓建设，数据处理
 - Hive平台开发数仓，ETL数据清洗，数据质量检测
@@ -31,8 +30,8 @@ description:
 - 传输任务
 ## 科研经历
 ### bert downstream task fine tuning to solve stance detection
-- 微调bert，分析聊天数据的情绪
-### Chatbot in human conversation using RAG and memory 
+- FT bert，downstream task，stance detect
+### Chatbot in human conversation using RAG and memory  
 - 聊天的长尾行为记忆，人类关系升级关键点往往就是在长尾数据，潜移默化
 - AI怎么识别到微妙的人类意图，发现情绪变化
 - 陌生人聊天，LLM（RAG+记忆）助力聊天破冰，提升气氛

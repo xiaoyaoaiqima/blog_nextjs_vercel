@@ -1,19 +1,19 @@
 ---
-title: 'My Timeline Log'
-date: '2024-10-25'
+title: 'timeline-record'
+date: '2024-10-28'
 description: 
 ---
 
 # 大学后个人发展
 
 ## 2021-09
-进入HDU DMT，学习了基础课程，数据结构+c语言
+enter HDU DMT，basic knowledge about computer science, math 
 ## 2021-11
-涉猎广泛，Unity游戏制作，AE/PS动画影视，文学创作，体育活动， 社交感情
+try a lot, including Unity, Literature, Sports, social party
 ## 2022-02
-健身++，娱乐场所++，开始进入可视化研究实验室，学习Vue，D3js，Threejs
+body building plus plus，start to learn data analyze, including Vue，D3js，Threejs
 ## 2022-07
-进入了人机智能实验室，真正接触了实验室的工作日常
+took a lot of public courses, met many friends, and learned a lot of interesting stuff that may not be used in the future
 ## 2022-09
 开始进入高强度的专业课学习
 - 计算机图形学 -- 超难，矩阵+编码，各种算法，建立了对图形学的认知
@@ -32,25 +32,25 @@ It's called 迷失阶段
 我要专门介绍一下
 
 ## 2023-10
-- 开始学习Java，Springboot，MySQL，Redis，MQ技术栈
-- 具备基本后端开发能力
+- start to learn Java，Springboot，MySQL，Redis，MQ
+- basic backend development skills
 
 ## 2023-12
-- 开始学习机器学习，深度学习，Pytorch，scikit-learning，爬虫
-- 具备基本数据挖掘能力
+- start to learn ML,DL, Spider
+- basic data analyzing skills
 
-## 2024-02
-- 开始在恒生电子实习，对公司日常工作模式，项目组会，开始跳出学生身份
+## 2024-02 
+- hundsun backend developer Internship开始在恒生电子实习，对公司日常工作模式，项目组会，开始跳出学生身份
 - 不单是编码能力，开始对项目有架构能力，分组合作，资源调配，认识到编码只是占一小部分
 - 建立了对技术栈的思考，学习从资源，效率，成本等多维度考虑软件开发
 - 同时参加了几个创业项目，认识到了创业迭代速度，产品调研，MVP，路演等
 
 ## 2024-07
-- 进入网易数智实习，第一次进入真正意义上的互联网大公司
+- GrowthEase data developer Internship，第一次进入真正意义上的互联网大公司
 - 对数据分析，数据建模，数据挖掘有了更深刻的认识
 - 同时认识到业务的重要性，互联网的终极目的是变现，变现逻辑大于代码逻辑
 
 ## 2024.10
-- 进入网易云音乐LLM研发部门实习
-- 实际参与到Prompt测试系统，僚机系统研发
-- 学习PE，LangChain，FT，LoRA，RAG，Dify
+- NetEase Cloud Music AIGC Internship
+- ML，LLM ops
+
