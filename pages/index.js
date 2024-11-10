@@ -12,8 +12,8 @@ export default function Home({ allPostsData }) {
         <title>{siteTitle}</title>
       </Head>
       <section className={utilStyles.headingMd}>
-        <p>AI信徒，LLM开发，全栈工程师，学生，准备留学</p>
-        <p>Blog site：<a href="https://xiaoyaoaiqima.github.io">博客网站</a></p>
+        <p>AI/LLM Developer, Full Stack Engineer, Student, English learner, music lover</p>
+        <p>Blog site：<a href="https://xiaoyaoaiqima.github.io">BLOG SITE</a></p>
         <p>知乎ID：Zhenlin Wu</p>
         <p>小红书ID：Zhenlin Wu</p>
       </section>
