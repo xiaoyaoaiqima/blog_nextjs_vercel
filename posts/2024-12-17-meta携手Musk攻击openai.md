@@ -1,5 +1,5 @@
 ---
-title: 'meta携手Musk攻击openai'
+title: '2024-12-17meta携手Musk攻击openai'
 date: '2024-12-17'
 description:
 ---
