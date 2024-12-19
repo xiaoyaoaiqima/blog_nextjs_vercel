@@ -14,8 +14,7 @@ export default function Home({ allPostsData }) {
       <section className={utilStyles.headingMd}>
         <p>AI/LLM Developer, Full Stack Engineer, Student, English learner, music lover</p>
         <p>Blog site：<a href="https://xiaoyaoaiqima.github.io">BLOG SITE</a></p>
-        <p>知乎ID：Zhenlin Wu</p>
-        <p>小红书ID：Zhenlin Wu</p>
+        <p>自媒体平台ID：Zhenlin Wu</p>
       </section>
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
         <h2 className={utilStyles.headingLg}>Blog</h2>
