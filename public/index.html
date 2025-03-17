@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>邬臻林 - 个人简历</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #3498db;
+            --text-color: #333;
+            --light-text: #7f8c8d;
+            --background: #f5f5f5;
+            --card-bg: #fff;
+            --shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            --border-radius: 8px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'Arial', sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--background);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding: 20px;
+            font-size: 16px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+
+        .top-section {
+            display: flex;
+            align-items: center;
+            padding: 40px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: var(--border-radius) var(--border-radius) 0 0;
+        }
+
+        .photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 4px solid white;
+            box-shadow: var(--shadow);
+            object-fit: cover;
+            margin-right: 30px;
+            flex-shrink: 0;
+        }
+
+        .name-title {
+            flex: 1;
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .title {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.85);
+            font-weight: 300;
+            margin-bottom: 15px;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .contact-item i {
+            margin-right: 8px;
+            font-size: 14px;
+        }
+
+        .navigation {
+            background-color: var(--accent-color);
+            padding: 12px 40px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            overflow-x: auto;
+            padding-bottom: 5px;
+        }
+
+        .nav-links li {
+            margin-right: 25px;
+            white-space: nowrap;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.2s ease;
+            font-size: 14px;
+        }
+
+        .nav-links a:hover {
+            opacity: 0.8;
+        }
+
+        .main-content {
+            padding: 5px 40px;
+        }
+
+        h2 {
+            font-size: 24px;
+            color: var(--primary-color);
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--accent-color);
+            margin-bottom: 20px;
+            margin-top: 40px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+        }
+
+        h2 i {
+            margin-right: 10px;
+            color: var(--accent-color);
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .education-item,
+        .experience-item {
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .school-name,
+        .company-name {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--primary-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .degree-info,
+        .job-info {
+            font-style: italic;
+            color: var(--light-text);
+            margin-bottom: 12px;
+            font-size: 15px;
+        }
+
+        .achievements {
+            margin-top: 12px;
+        }
+
+        ul {
+            padding-left: 20px;
+            list-style-type: circle;
+        }
+
+        li {
+            margin-bottom: 10px;
+            position: relative;
+        }
+
+        .job-title {
+            font-weight: 600;
+            color: var(--accent-color);
+            margin: 10px 0;
+            font-size: 17px;
+        }
+
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .skill-category {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .skill-category h3 {
+            font-size: 18px;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .skill-item {
+            margin-bottom: 15px;
+        }
+
+        .skill-name {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+
+        .skill-bar {
+            height: 8px;
+            background-color: #e0e0e0;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .skill-level {
+            height: 100%;
+            background-color: var(--accent-color);
+        }
+
+        .other-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .other-info div {
+            flex: 0 0 48%;
+            margin-bottom: 15px;
+            background-color: rgba(52, 152, 219, 0.05);
+            padding: 12px 15px;
+            border-radius: 6px;
+            border-left: 3px solid var(--accent-color);
+        }
+
+        .experience-item {
+            padding-left: 20px;
+            border-left: 2px solid #e0e0e0;
+        }
+
+        .experience-item::before {
+            content: '';
+            position: absolute;
+            left: -9px;
+            top: 0;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background-color: var(--accent-color);
+            border: 2px solid white;
+        }
+
+        .time-tag {
+            background-color: rgba(52, 152, 219, 0.1);
+            color: var(--accent-color);
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        @media print {
+            body {
+                padding: 0;
+                background-color: white;
+            }
+
+            .container {
+                box-shadow: none;
+                max-width: 100%;
+            }
+
+            .navigation {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .top-section {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .photo {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+
+            .contact-info {
+                justify-content: center;
+            }
+
+            .main-content, .top-section {
+                padding: 5px 20px;
+            }
+
+            .other-info div {
+                flex: 0 0 100%;
+            }
+        }
+
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .skills-column {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .skills-column h3 {
+            font-size: 18px;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            border-bottom: 1px solid #eaeaea;
+            padding-bottom: 5px;
+        }
+
+        .skills-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .skills-list li {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 12px;
+            padding-bottom: 5px;
+            border-bottom: 1px dotted #eaeaea;
+        }
+
+        .skill-name {
+            font-weight: 500;
+        }
+
+        .skill-dots {
+            color: var(--accent-color);
+            letter-spacing: 2px;
+        }
+
+        @media (max-width: 600px) {
+            .skills-column {
+                flex: 0 0 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="top-section">
+            <img src="me.png" alt="邬臻林的照片" class="photo">
+            <div class="name-title">
+                <h1>邬臻林</h1>
+                <div class="title">大模型应用开发工程师</div>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i> 19858312003
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i> 1428293926@qq.com
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i> 杭州
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <nav class="navigation">
+            <ul class="nav-links">
+                <li><a href="#summary"><i class="fas fa-user"></i> 个人总结</a></li>
+                <li><a href="#skills"><i class="fas fa-code"></i> 技能专长</a></li>
+                <li><a href="#experience"><i class="fas fa-briefcase"></i> 工作经历</a></li>
+                <li><a href="#education"><i class="fas fa-graduation-cap"></i> 教育经历</a></li>
+                <li><a href="#others"><i class="fas fa-plus-circle"></i> 其他信息</a></li>
+            </ul>
+        </nav>
+
+        <div class="main-content">
+            <section id="summary" class="section">
+                <h2><i class="fas fa-user"></i> 个人总结</h2>
+                <p>1. 开发背景丰富，经历岗位多，包括大模型应用开发、前后端Web开发、数据分析和爬虫。
+                   <br>2. 学习能力强，由兴趣驱动。有owner到1项目经验，包括项目策划、开发、测试、上线全流程，积极沟通，勇于暴露问题。</p>
+            </section>
+            <section id="experience" class="section">
+                <h2><i class="fas fa-briefcase"></i> 工作与实习经历</h2>
+
+                <div class="experience-item">
+                    <div class="company-name">
+                        网易云音乐 创新工程部
+                        <span class="time-tag">2024年11月 - 至今</span>
+                    </div>
+                    <div class="job-title">大模型应用开发</div>
+                    <div class="achievements">
+                        <p>工作描述：1. 在社交聊天应用场景，基于dify框架开发大模型评测系统，探索LLM应用构建SOP。2.
+                            基于dify建立智能客服系统，涵盖用户鉴权、需求提交，解决平台运维迭代不规范、不透明和低效的问题。</p>
+                        <ul>
+                            <li><strong>大模型评测系统：</strong>1. 搭建原始数据链路。2. 搭建数据打标平台，积累评测样本。3.
+                                prompt+模型选择+测试找badcase+优化，梳理大模型评测原理和逻辑。4. 迭代数据打标和评测的方法论。5. 深度了解业务，记忆系统，角色认知，亲密度</li>
+                            <li><strong>智能客服系统：</strong>1. 智能交互漏斗设计。2.
+                                dify+workflow+RAG，实现语义理解增强引擎；3，服务执行中枢，工单自动化，会话群组创建，知识库精准回复；3.
+                                基于Fastap搭建web应用，建立聊天和工单管理系统，追踪服务质量，积累badcase</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="company-name">
+                        网易 智企
+                        <span class="time-tag">2024年07月 - 2024年11月</span>
+                    </div>
+                    <div class="job-title">数据开发</div>
+                    <div class="achievements">
+                        <p>工作描述：基于大数据平台的数据报表制作与自动化处理，基于爬虫Web端自动化治理</p>
+                        <ul>
+                            <li><strong>数据报表：</strong>目的是预测商机，展示重要数据。首先要理解业务数据指标，再写SQL取数</li>
+                            <li><strong>办公自动化：</strong>对离线文件进行批量化处理；通过爬虫程序模拟人工操作，完成数据采集、配置修改等任务</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="company-name">
+                        字节跳动
+                        <span class="time-tag">2024年05月 - 2024年07月</span>
+                    </div>
+                    <div class="job-title">数据开发</div>
+                    <div class="achievements">
+                        <p>工作描述：广告投放机器学习模型评测系统</p>
+                        <ul>
+                            <li>使用Flask+Vue，搭建Web应用，作为可视化模型训练平台的基础架构；主要功能是可视化调整损失函数，模型超参数</li>
+                            <li>实践了Linux服务器部署，Vue项目build后用nginx配置，supervisor运行Flask，编写conf配置文件。具备快速项目上线能力</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="company-name">
+                        恒生电子股份有限公司
+                        <span class="time-tag">2024年02月 - 2024年05月</span>
+                    </div>
+                    <div class="job-title">后端开发 TA创新研发部</div>
+                    <div class="achievements">
+                        <p>工作描述：流量入口高并发处理，业务层缓存异常处理，支付接口</p>
+                        <p>技术栈包括：springboot，vue，redis，消息队列，分布式锁，设计模式</p>
+                        <ul>
+                            <li>应对数据库过载：利用Redis缓存setex过期时间，实践装饰器模式，完善日志逻辑，修改数据库配置；经历数据库事故修复</li>
+                            <li>前端安全措施：利用Vue Router的导航守卫和Vuex管理用户权限，动态控制页面访问和操作按钮的显示</li>
+                            <li>分布式一致性：使用redission分布式锁保证多客户端不冲突；使用evalsha保证多redis操作的原子性</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="education" class="section">
+                <h2><i class="fas fa-graduation-cap"></i> 教育经历</h2>
+                <div class="education-item">
+                    <div class="school-name">
+                        杭州电子科技大学
+                        <span class="time-tag">2021年09月 - 2025年07月</span>
+                    </div>
+                    <div class="degree-info">计算机类 数字媒体技术 本科 （杭州）</div>
+                    <div class="achievements">
+                        <ul>
+                            <li>GPA：4.3 / 5.00（专业前10%）</li>
+                            <li>荣誉：大学生创新创业训练项目（国家级）、互联网+创业大赛省金奖、乡村振兴电子商务竞赛省奖</li>
+                            <li>学生工作：体育协会外联部，负责宣传招新与商业合作（寻求校外资金，联系校友企业）</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="others" class="section">
+                <h2><i class="fas fa-plus-circle"></i> 其他</h2>
+                <div class="other-info">
+                    <div>
+                        <strong><i class="fas fa-language"></i> 语言技能：</strong> 托福100+，熟练听说读写
+                    </div>
+                    <div>
+                        <strong><i class="fas fa-heart"></i> 爱好：</strong> 健身，骑行，球类运动
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</body>
+
+</html>
