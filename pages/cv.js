@@ -1,4 +1,4 @@
-import MyCV from './mycv_comp';
+import MyCV from '../components/mycv_comp';
 export default function CV() {
   return (
       <MyCV />
