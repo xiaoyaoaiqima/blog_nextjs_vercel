@@ -1,0 +1,12 @@
+---
+title: '2025-03-05-向量数据库chroma学习，与weaviate，milvus，faiss对比-out'
+date: '2025-03-05'
+description:
+---
+
+# 目的
+为了搭建RAG，对比一下向量数据库
+
+chroma：
+1. 持久化和非持久化。持久化chroma+sqlite可以把db文件方便的嵌入在项目中
+2. 
