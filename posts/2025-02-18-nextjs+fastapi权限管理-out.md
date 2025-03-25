@@ -5,8 +5,7 @@ description:
 ---
 
 # 目的
-梳理权限管理：登陆，create—token，return jwt，鉴权
-
+梳理权限管理，技术栈，nextjs，nextAuthjs，fastapi，postgresql
 
 ## fastapi后端部分
 1. 设置密码哈希上下文，用于密码hash和verify
