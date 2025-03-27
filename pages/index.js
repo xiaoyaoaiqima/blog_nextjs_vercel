@@ -1,22 +1,26 @@
-import Head from 'next/head';
-import Layout, { siteTitle } from '../components/layout';
-import utilStyles from '../styles/utils.module.css';
-import styles from '../styles/header.module.css';
-import { getSortedPostsData } from '../lib/posts';
-import Link from 'next/link';
-import Date from '../components/date';
+import Head from 'next/head'
+import Layout, { siteTitle } from '../components/layout'
+import utilStyles from '../styles/utils.module.css'
+import styles from '../styles/header.module.css'
+import { getSortedPostsData } from '../lib/posts'
+import Link from 'next/link'
+import Date from '../components/date'
 
-export default function Home({ allPostsData }) {
+export default function Home ({ allPostsData }) {
   return (
     <Layout home>
       <Head>
         <title>{siteTitle}</title>
       </Head>
       <section className={utilStyles.headingMd}>
-        <p>大模型应用开发，Web前后端开发，数据开发，数据分析</p>
+        <p>大模型应用开发，Web前后端开发，模型微调</p>
         <div className={styles.links}>
-          <a href="/cv" className={styles.link}>美化版简历</a>
-          <a href="/rawcv" className={styles.link}>最新版简历</a>
+          <a href='/cv' className={styles.link}>
+            美化版简历
+          </a>
+          <a href='/rawcv' className={styles.link}>
+            最新版简历
+          </a>
         </div>
         <p className={styles.social}>博客：山姆林(知乎)，山姆林LLM(小红书)</p>
       </section>
@@ -35,14 +39,14 @@ export default function Home({ allPostsData }) {
         </ul>
       </section>
     </Layout>
-  );
+  )
 }
 
-export async function getStaticProps() {
-  const allPostsData = getSortedPostsData();
+export async function getStaticProps () {
+  const allPostsData = getSortedPostsData()
   return {
     props: {
-      allPostsData,
-    },
-  };
+      allPostsData
+    }
+  }
 }
