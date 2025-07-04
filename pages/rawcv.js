@@ -21,11 +21,11 @@ export function MarkdownRenderer() {
 **大模型应用开发工程师** | 2024年11月 - 至今
 - **大模型评测系统**
     - 构建高效数据打标平台，评测样本积累，为模型优化提供高质量数据基础。
-    - 通过“Prompt工程优化+模型微调+Badcase分析”闭环流程，深入探索大模型评测机制，提升模型在意图理解、上下文连贯性等维度的表现。
+    - 通过"Prompt工程优化+模型微调+Badcase分析"闭环流程，深入探索大模型评测机制，提升模型在意图理解、上下文连贯性等维度的表现。
     - 结合人工评估，持续迭代评测方法论，显著提升评测效率与精准度。
     - 深入研究记忆模型、角色认知、知识库构建等核心技术，探索多轮对话中的长期记忆存储与动态知识更新机制。
 - **智能客服系统**
-    - 采用“dify + workflow + RAG”技术组合，搭建智能客服bot，利用dify导出api。
+    - 采用"dify + workflow + RAG"技术组合，搭建智能客服bot，利用dify导出api。
     - 深入参与内部提效工程，实现工单自动化、会话群组创建功能和智能客服结合。
     - 基于Fastapi结合Nextjs搭建web应用，利用开源框架Ant Design X，编写会话数据管理逻辑，整合dify的api请求逻辑
 
@@ -102,7 +102,9 @@ export default function RawCV() {
         返回首页
       </Link>
       <MarkdownRenderer />
-
+      <footer style={{textAlign: 'center', fontSize: '13px', color: '#888', marginTop: '2rem'}}>
+        <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer">浙ICP备2025157442号</a>
+      </footer>
     </div>
   );
 }

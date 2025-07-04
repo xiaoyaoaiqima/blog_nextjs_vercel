@@ -64,6 +64,9 @@ export default function Layout({ children, home }) {
           <Link href="/">← Back to home</Link>
         </div>
       )}
+      <footer style={{textAlign: 'center', fontSize: '13px', color: '#888', marginTop: '2rem'}}>
+        <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer">浙ICP备2025157442号</a>
+      </footer>
     </div>
   );
 }
