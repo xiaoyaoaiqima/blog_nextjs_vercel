@@ -1,0 +1,155 @@
+.container {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  color: #333;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.card {
+  display: block;
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  text-decoration: none;
+  color: inherit;
+  border: 1px solid #e5e7eb;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  border-color: #3b82f6;
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.75rem;
+}
+
+.categoryName {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.postCount {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2rem;
+  height: 2rem;
+  padding: 0 0.5rem;
+  background: #eff6ff;
+  color: #3b82f6;
+  font-size: 0.875rem;
+  font-weight: 600;
+  border-radius: 9999px;
+}
+
+.description {
+  font-size: 0.875rem;
+  color: #6b7280;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Category page specific styles */
+.categoryHeader {
+  margin-bottom: 2rem;
+}
+
+.backLink {
+  display: inline-flex;
+  align-items: center;
+  color: #6b7280;
+  text-decoration: none;
+  font-size: 0.875rem;
+  margin-bottom: 1rem;
+  transition: color 0.2s;
+}
+
+.backLink:hover {
+  color: #3b82f6;
+}
+
+.categoryTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin: 0 0 0.5rem 0;
+}
+
+.categoryDescription {
+  font-size: 1rem;
+  color: #6b7280;
+  margin: 0;
+}
+
+.postList {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.postItem {
+  display: block;
+  background: #fff;
+  border-radius: 8px;
+  padding: 1.25rem;
+  border: 1px solid #e5e7eb;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.2s ease;
+}
+
+.postItem:hover {
+  border-color: #3b82f6;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.postTitle {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin: 0 0 0.5rem 0;
+}
+
+.postDate {
+  font-size: 0.875rem;
+  color: #9ca3af;
+  margin: 0;
+}
+
+.emptyState {
+  text-align: center;
+  padding: 3rem;
+  color: #6b7280;
+}
