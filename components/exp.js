@@ -2,12 +2,13 @@
 import React from 'react';
 
 // 公司级别组件
-export const CompanyItem = ({ company, timeTag, projects }) => (
-  <div className="company-block" style={{ marginBottom: '30px' }}>
+export const CompanyItem = ({ company, role, timeTag, projects }) => (
+  <div className="company-block">
     <div className="company-name">
       {company}
       <span className="time-tag">{timeTag}</span>
     </div>
+    {role && <div className="job-info">{role}</div>}
     {projects.map((project, index) => (
       <ProjectItem key={index} {...project} />
     ))}
@@ -20,19 +21,25 @@ const ProjectItem = ({
   jobTitle,
   timeTag,
   techStack,
+  focusTags,
   description,
   achievements
 }) => {
   return (
-    <div className="experience-item" style={{ marginTop: '20px' }}>
-      <div className="job-title" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+    <div className="experience-item">
+      <div className="job-title">
         <span>{projectName}</span>
         <span className="time-tag">{timeTag}</span>
       </div>
       {jobTitle && <div className="job-info">{jobTitle}</div>}
-      {techStack && <div className="job-info">技术栈：{techStack}</div>}
+      {techStack && <div className="job-info"><strong>技术栈：</strong>{techStack}</div>}
+      {focusTags?.length ? (
+        <div className="project-tags">
+          <strong>核心产出：</strong>{focusTags.join(", ")}
+        </div>
+      ) : null}
       <div className="achievements">
-        <p>{description}</p>
+        <p style={{marginBottom: "4px"}}>{description}</p>
         <ul>
           {achievements.map((item, index) => (
             <li key={index} dangerouslySetInnerHTML={{ __html: item }} />
@@ -68,7 +75,7 @@ const ExperienceItem = ({
       </div>
       <div className="job-title">{subtitleText}</div>
       <div className="achievements">
-        <p>{description}</p>
+        <p style={{marginBottom: "4px"}}>{description}</p>
         <ul>
           {achievements.map((item, index) => (
             <li key={index} dangerouslySetInnerHTML={{ __html: item }} />
@@ -80,4 +87,3 @@ const ExperienceItem = ({
 };
 
 export default ExperienceItem;
-
