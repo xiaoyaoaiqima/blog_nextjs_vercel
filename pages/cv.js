@@ -1,4 +1,4 @@
-import MyCV from '../components/mycv_comp';
+import ResumePage from "../components/resume";
 import Link from 'next/link'
 
 export default function CV() {
@@ -22,7 +22,7 @@ export default function CV() {
         <i className="fas fa-arrow-left" style={{marginRight: '8px'}} />
         返回首页
       </Link>
-      <MyCV />
+      <ResumePage />
     </div>
   );
 }

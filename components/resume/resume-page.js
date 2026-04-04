@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
 import Markdown from "markdown-to-jsx";
-import { CompanyItem } from "./exp";
+import { CompanyItem } from "./experience";
 import {
   educationData,
   experienceData,
@@ -225,7 +225,7 @@ const resumeStyles = `
   }
 `;;
 
-export default function MyCV() {
+export default function ResumePage() {
   const containerRef = useRef(null);
   const [isExporting, setIsExporting] = useState(false);
 
