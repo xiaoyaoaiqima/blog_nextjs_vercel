@@ -16,10 +16,7 @@ export default function Home({ categories }) {
         <p>大模型应用开发，Web前后端开发，模型微调</p>
         <div className={styles.links}>
           <a href="/cv" className={styles.link}>
-            美化版简历
-          </a>
-          <a href="/rawcv" className={styles.link}>
-            最新版简历
+            简历
           </a>
         </div>
         <p className={styles.social}>博客：山姆林(知乎)，山姆林LLM(小红书)</p>

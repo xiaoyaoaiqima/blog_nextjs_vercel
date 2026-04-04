@@ -7,11 +7,48 @@ export const headlineTags = [
   "FastAPI / Python / Kubernetes",
 ];
 
+export const resumeProfile = {
+  name: "邬臻林",
+  documentTitle: "邬臻林 - 个人简历",
+  jobTitle: "AI 应用开发工程师 | LLM / Agent / RAG",
+  photoSrc: "me.png",
+  photoAlt: "邬臻林的照片",
+  pdfFileName: "邬臻林-简历.pdf",
+  contactItems: [
+    { text: "19858312003", href: "tel:19858312003" },
+    { text: "1428293926@qq.com", href: "mailto:1428293926@qq.com" },
+    { text: "杭州" },
+  ],
+};
+
 export const summaryText = `
 - AI Agent架构设计（工作流编排、工具调用、记忆机制、多 Agent 协作、RAG 知识检索与注入）
 - LLMops能力（模型评测，RLHF，私有化部署）
 - AI 多模态交互应用（语音对话系统设计、ASR/TTS 语音链路优化）
 `
+
+export const educationData = [
+  {
+    school: "杭州电子科技大学",
+    timeTag: "2021年09月 - 2025年07月",
+    degreeInfo: "计算机类 数字媒体技术 本科 （杭州）",
+    achievements: [
+      "GPA：4.3 / 5.00（专业前10%）",
+      "荣誉：大学生创新创业训练项目（国家级）、互联网+创业大赛省金奖、乡村振兴电子商务竞赛省奖",
+      "学生工作：体育协会外联部，负责宣传招新与商业合作（寻求校外资金，联系校友企业）",
+    ],
+  },
+];
+
+export const otherInfo = [
+  { label: "语言技能", value: "托福100+，熟练听说读写" },
+  { label: "爱好", value: "健身，骑行，球类运动" },
+];
+
+export const resumeFooter = {
+  icpLabel: "浙ICP备2025157442号",
+  icpHref: "https://beian.miit.gov.cn/",
+};
 
 
 

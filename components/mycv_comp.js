@@ -1,7 +1,15 @@
 import React, { useRef, useState } from "react";
 import Markdown from "markdown-to-jsx";
 import { CompanyItem } from "./exp";
-import { headlineTags, summaryText, experienceData } from "./config";
+import {
+  educationData,
+  experienceData,
+  headlineTags,
+  otherInfo,
+  resumeFooter,
+  resumeProfile,
+  summaryText,
+} from "./config";
 
 const resumeStyles = `
   :root {
@@ -257,7 +265,7 @@ export default function MyCV() {
         heightLeft -= pageHeight;
       }
 
-      pdf.save("邬臻林-简历.pdf");
+      pdf.save(resumeProfile.pdfFileName);
     } catch (error) {
       console.error("PDF 导出失败:", error);
       alert("导出失败，请重试");
@@ -270,22 +278,31 @@ export default function MyCV() {
     <div>
       <meta charSet="UTF-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>邬臻林 - 个人简历</title>
+      <title>{resumeProfile.documentTitle}</title>
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
       <style dangerouslySetInnerHTML={{ __html: resumeStyles }} />
       <div className="container" ref={containerRef}>
         <div className="top-section">
           <div className="header-text">
-            <h1>邬臻林</h1>
-            <div className="title">AI 应用开发工程师 | LLM / Agent / RAG</div>
+            <h1>{resumeProfile.name}</h1>
+            <div className="title">{resumeProfile.jobTitle}</div>
             <div className="contact-info">
-              19858312003 | 1428293926@qq.com | 杭州
+              {resumeProfile.contactItems.map((item, index) => (
+                <React.Fragment key={item.text}>
+                  {index > 0 ? " | " : null}
+                  {item.href ? <a href={item.href}>{item.text}</a> : item.text}
+                </React.Fragment>
+              ))}
             </div>
             <div className="profile-tags">
               {headlineTags.join(" | ")}
             </div>
           </div>
-          <img src="me.png" alt="邬臻林的照片" className="header-photo" />
+          <img
+            src={resumeProfile.photoSrc}
+            alt={resumeProfile.photoAlt}
+            className="header-photo"
+          />
         </div>
 
         <nav className="navigation">
@@ -311,33 +328,44 @@ export default function MyCV() {
 
           <section id="education" className="section">
             <h2>教育经历</h2>
-            <div className="education-item">
-              <div className="school-name">
-                杭州电子科技大学
-                <span className="time-tag">2021年09月 - 2025年07月</span>
+            {educationData.map((education) => (
+              <div className="education-item" key={education.school}>
+                <div className="school-name">
+                  {education.school}
+                  <span className="time-tag">{education.timeTag}</span>
+                </div>
+                <div className="degree-info">{education.degreeInfo}</div>
+                <div className="achievements">
+                  <ul>
+                    {education.achievements.map((item) => (
+                      <li key={item}>{item}</li>
+                    ))}
+                  </ul>
+                </div>
               </div>
-              <div className="degree-info">计算机类 数字媒体技术 本科 （杭州）</div>
-              <div className="achievements">
-                <ul>
-                  <li>GPA：4.3 / 5.00（专业前10%）</li>
-                  <li>荣誉：大学生创新创业训练项目（国家级）、互联网+创业大赛省金奖、乡村振兴电子商务竞赛省奖</li>
-                  <li>学生工作：体育协会外联部，负责宣传招新与商业合作（寻求校外资金，联系校友企业）</li>
-                </ul>
-              </div>
-            </div>
+            ))}
           </section>
 
           <section id="others" className="section">
             <h2>其他</h2>
             <div className="other-info">
-              <p><strong>语言技能：</strong> 托福100+，熟练听说读写</p>
-              <p><strong>爱好：</strong> 健身，骑行，球类运动</p>
+              {otherInfo.map((item) => (
+                <p key={item.label}>
+                  <strong>{item.label}：</strong> {item.value}
+                </p>
+              ))}
             </div>
           </section>
         </div>
       </div>
       <footer style={{ textAlign: "center", fontSize: "13px", color: "#888", marginTop: "2rem" }}>
-        <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer">浙ICP备2025157442号</a>
+        <a
+          href={resumeFooter.icpHref}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {resumeFooter.icpLabel}
+        </a>
       </footer>
     </div>
   );
