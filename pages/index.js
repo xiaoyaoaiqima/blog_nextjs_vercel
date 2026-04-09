@@ -13,16 +13,16 @@ export default function Home({ categories }) {
         <title>{siteTitle}</title>
       </Head>
       <section className={utilStyles.headingMd}>
-        <p>大模型应用开发，Web前后端开发，模型微调</p>
+        <p>AI从业者，金融小学生</p>
         <div className={styles.links}>
           <a href="/cv" className={styles.link}>
             简历
           </a>
         </div>
-        <p className={styles.social}>博客：山姆林(知乎)，山姆林LLM(小红书)</p>
+        {/* <p className={styles.social}>博客：山姆林(知乎)，山姆林LLM(小红书)</p> */}
       </section>
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
-        <h2 className={utilStyles.headingLg}>知识库</h2>
+        <h2 className={utilStyles.headingLg}>Note</h2>
         <div className={categoryStyles.grid}>
           {categories.map((category) => (
             <Link
