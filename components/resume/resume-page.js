@@ -318,14 +318,6 @@ export default function ResumePage() {
               <Markdown>{summaryText}</Markdown>
             </div>
           </section>
-
-          <section id="experience" className="section">
-            <h2>工作与实习经历</h2>
-            {experienceData.map((exp, index) => (
-              <CompanyItem key={index} {...exp} />
-            ))}
-          </section>
-
           <section id="education" className="section">
             <h2>教育经历</h2>
             {educationData.map((education) => (
@@ -345,8 +337,16 @@ export default function ResumePage() {
               </div>
             ))}
           </section>
+          <section id="experience" className="section">
+            <h2>工作与实习经历</h2>
+            {experienceData.map((exp, index) => (
+              <CompanyItem key={index} {...exp} />
+            ))}
+          </section>
 
-          <section id="others" className="section">
+
+
+          {/* <section id="others" className="section">
             <h2>其他</h2>
             <div className="other-info">
               {otherInfo.map((item) => (
@@ -355,7 +355,7 @@ export default function ResumePage() {
                 </p>
               ))}
             </div>
-          </section>
+          </section> */}
         </div>
       </div>
       <footer style={{ textAlign: "center", fontSize: "13px", color: "#888", marginTop: "2rem" }}>
