@@ -2,14 +2,23 @@
 import React from 'react';
 
 // 公司级别组件
-export const CompanyItem = ({ company, role, timeTag, projects }) => (
+export const CompanyItem = ({ company, role, timeTag, projects, achievements }) => (
   <div className="company-block">
     <div className="company-name">
       {company}
       <span className="time-tag">{timeTag}</span>
     </div>
     {role && <div className="job-info">{role}</div>}
-    {projects.map((project, index) => (
+    {achievements?.length ? (
+      <div className="achievements">
+        <ul>
+          {achievements.map((item, index) => (
+            <li key={index} dangerouslySetInnerHTML={{ __html: item }} />
+          ))}
+        </ul>
+      </div>
+    ) : null}
+    {projects?.map((project, index) => (
       <ProjectItem key={index} {...project} />
     ))}
   </div>

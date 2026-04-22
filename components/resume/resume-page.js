@@ -1,15 +1,7 @@
 import React, { useRef, useState } from "react";
 import Markdown from "markdown-to-jsx";
 import { CompanyItem } from "./experience";
-import {
-  educationData,
-  experienceData,
-  headlineTags,
-  otherInfo,
-  resumeFooter,
-  resumeProfile,
-  summaryText,
-} from "./config";
+import * as defaultConfig from "./config";
 
 const resumeStyles = `
   :root {
@@ -46,9 +38,8 @@ const resumeStyles = `
 
   /* Header */
   .top-section {
-    margin-bottom: 24px;
-    border-bottom: 2px solid #333;
-    padding-bottom: 16px;
+    margin-bottom: 4px;
+    padding-bottom: 4px;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
@@ -58,13 +49,26 @@ const resumeStyles = `
     flex: 1;
   }
 
-  .header-photo {
+  .header-photo-wrapper {
     width: 90px;
     height: 120px;
-    object-fit: cover;
     margin-left: 20px;
     border-radius: 4px;
     border: 1px solid #eee;
+    overflow: hidden;
+    flex-shrink: 0;
+    position: relative;
+  }
+
+  .header-photo {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 100%;
+    width: auto;
+    max-width: none;
+    display: block;
   }
 
   h1 {
@@ -225,7 +229,19 @@ const resumeStyles = `
   }
 `;;
 
-export default function ResumePage() {
+export default function ResumePage({ config = defaultConfig }) {
+  const {
+    educationData,
+    experienceData,
+    projectData,
+    skillsData,
+    headlineTags = [],
+    resumeFooter,
+    resumeProfile,
+    summaryText,
+    experienceTitle = "工作与实习经历",
+  } = config;
+
   const containerRef = useRef(null);
   const [isExporting, setIsExporting] = useState(false);
 
@@ -244,25 +260,43 @@ export default function ResumePage() {
         scale: 2,
         useCORS: true,
         logging: false,
-        backgroundColor: "#ffffff"
+        backgroundColor: "#ffffff",
+        imageTimeout: 20000,
+        foreignObjectRendering: false
       });
 
-      const imgWidth = 210;
-      const pageHeight = 297;
-      const imgHeight = (canvas.height * imgWidth) / canvas.width;
-      let heightLeft = imgHeight;
+      const pdfWidth = 210;
+      const pdfPageHeight = 297;
+      // 每一页对应的 canvas 像素高度
+      const pxPerPage = (canvas.width * pdfPageHeight) / pdfWidth;
 
       const pdf = new jsPDF("p", "mm", "a4");
-      let position = 0;
+      const totalPages = Math.ceil(canvas.height / pxPerPage);
 
-      pdf.addImage(canvas.toDataURL("image/png"), "PNG", 0, position, imgWidth, imgHeight);
-      heightLeft -= pageHeight;
-
-      while (heightLeft > 0) {
-        position = heightLeft - imgHeight;
-        pdf.addPage();
-        pdf.addImage(canvas.toDataURL("image/png"), "PNG", 0, position, imgWidth, imgHeight);
-        heightLeft -= pageHeight;
+      // 按页切片，避免重复嵌入整张长图
+      for (let i = 0; i < totalPages; i++) {
+        const sliceCanvas = document.createElement("canvas");
+        const sliceHeight = Math.min(pxPerPage, canvas.height - i * pxPerPage);
+        sliceCanvas.width = canvas.width;
+        sliceCanvas.height = sliceHeight;
+        const ctx = sliceCanvas.getContext("2d");
+        ctx.fillStyle = "#ffffff";
+        ctx.fillRect(0, 0, sliceCanvas.width, sliceCanvas.height);
+        ctx.drawImage(
+          canvas,
+          0, i * pxPerPage, canvas.width, sliceHeight,
+          0, 0, canvas.width, sliceHeight
+        );
+        const sliceImgHeight = (sliceHeight * pdfWidth) / canvas.width;
+        if (i > 0) pdf.addPage();
+        pdf.addImage(
+          sliceCanvas.toDataURL("image/jpeg", 0.92),
+          "JPEG",
+          0,
+          0,
+          pdfWidth,
+          sliceImgHeight
+        );
       }
 
       pdf.save(resumeProfile.pdfFileName);
@@ -298,11 +332,14 @@ export default function ResumePage() {
               {headlineTags.join(" | ")}
             </div>
           </div>
-          <img
-            src={resumeProfile.photoSrc}
-            alt={resumeProfile.photoAlt}
-            className="header-photo"
-          />
+          <div className="header-photo-wrapper">
+            <img
+              src={resumeProfile.photoSrc}
+              alt={resumeProfile.photoAlt}
+              className="header-photo"
+              crossOrigin="anonymous"
+            />
+          </div>
         </div>
 
         <nav className="navigation">
@@ -313,7 +350,7 @@ export default function ResumePage() {
 
         <div className="main-content">
           <section id="summary" className="section">
-            <h2>个人总结</h2>
+            <h2 style={{ marginTop: "0" }}>个人总结</h2>
             <div className="summary-card">
               <Markdown>{summaryText}</Markdown>
             </div>
@@ -337,25 +374,34 @@ export default function ResumePage() {
               </div>
             ))}
           </section>
-          <section id="experience" className="section">
-            <h2>工作与实习经历</h2>
-            {experienceData.map((exp, index) => (
-              <CompanyItem key={index} {...exp} />
-            ))}
-          </section>
-
-
-
-          {/* <section id="others" className="section">
-            <h2>其他</h2>
-            <div className="other-info">
-              {otherInfo.map((item) => (
-                <p key={item.label}>
-                  <strong>{item.label}：</strong> {item.value}
-                </p>
+          {experienceData?.length ? (
+            <section id="experience" className="section">
+              <h2>{experienceTitle}</h2>
+              {experienceData.map((exp, index) => (
+                <CompanyItem key={index} {...exp} />
               ))}
-            </div>
-          </section> */}
+            </section>
+          ) : null}
+          {projectData?.length ? (
+            <section id="projects" className="section">
+              <h2>项目经历</h2>
+              {projectData.map((exp, index) => (
+                <CompanyItem key={index} {...exp} />
+              ))}
+            </section>
+          ) : null}
+          {skillsData?.length ? (
+            <section id="skills" className="section">
+              <h2>技能/证书及其他</h2>
+              <div className="other-info">
+                {skillsData.map((item) => (
+                  <p key={item.label} style={{ marginBottom: "4px" }}>
+                    <strong>{item.label}：</strong>{item.value}
+                  </p>
+                ))}
+              </div>
+            </section>
+          ) : null}
         </div>
       </div>
       <footer style={{ textAlign: "center", fontSize: "13px", color: "#888", marginTop: "2rem" }}>
