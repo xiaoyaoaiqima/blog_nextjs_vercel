@@ -1,6 +1,8 @@
-# 个人重要信息记录
+# 公开博客与简历站
 
-基于 Next.js Pages Router 的个人知识库和简历站点。
+基于 Next.js Pages Router 的公开文章展示和简历站点。
+
+完整的私人知识库、草稿、复盘和过程材料放在 `/Users/luxifa/brain`，本项目只保留适合对外展示的内容。
 
 ## 运行
 
@@ -45,7 +47,8 @@ public/                 静态资源
 ## 内容维护
 
 - 新文章直接放到 `posts/<category>/` 下，支持子目录嵌套。
-- `posts/private/` 下的 Markdown 不会对外生成页面。
+- 不建议在本仓库长期保存私人草稿或敏感材料；先放到 `/Users/luxifa/brain/公开文章草稿/`，确认可公开后再复制到本项目。
+- `posts/private/` 下的 Markdown 不会对外生成页面，但如果仓库公开，源码仍可能被看到。
 - 新增分类时，不只要建目录，还要同步更新 `lib/posts/categories.js`。
 
 ## 简历维护
