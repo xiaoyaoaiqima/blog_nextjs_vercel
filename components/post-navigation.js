@@ -6,8 +6,8 @@ export function Breadcrumb({ category, postTitle }) {
 
   return (
     <nav className={styles.breadcrumb}>
-      <Link href="/" className={styles.breadcrumbLink}>
-        首页
+      <Link href="/blog" className={styles.breadcrumbLink}>
+        技术博客
       </Link>
       <span className={styles.breadcrumbSeparator}>/</span>
       <Link

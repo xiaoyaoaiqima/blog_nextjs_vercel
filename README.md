@@ -1,6 +1,6 @@
-# 公开博客与简历站
+# 小山科技工作室官网
 
-基于 Next.js Pages Router 的公开文章展示和简历站点。
+基于 Next.js Pages Router 的企业 AI Agent 定制开发与落地服务官网，保留技术博客。
 
 完整的私人知识库、草稿、复盘和过程材料放在 `/Users/luxifa/brain`，本项目只保留适合对外展示的内容。
 
@@ -22,16 +22,20 @@ npm run start
 
 ```text
 pages/
-  index.js              首页，展示分类入口
+  index.js              工作室首页
+  services.js           服务能力
+  cases/                项目案例列表与详情
+  blog.js               技术博客分类入口
+  about.js              工作室简介
+  contact.js            业务合作入口
   category/[slug].js    分类页
   posts/[...slug].js    文章详情页
-  cv.js                 简历页
 
 components/
   layout.js             站点公共布局
   date.js               日期展示
   post-navigation.js    面包屑和上一篇/下一篇
-  resume/               简历模块
+  studio.js             工作室页面公共组件
 
 lib/
   posts.js              博客数据层对外导出
@@ -51,9 +55,7 @@ public/                 静态资源
 - `posts/private/` 下的 Markdown 不会对外生成页面，但如果仓库公开，源码仍可能被看到。
 - 新增分类时，不只要建目录，还要同步更新 `lib/posts/categories.js`。
 
-## 简历维护
+## 案例维护
 
-- 简历页面入口在 `pages/cv.js`。
-- 简历内容统一维护在 `components/resume/config.js`。
-- 简历渲染逻辑在 `components/resume/resume-page.js`。
-- 导出 PDF 的逻辑也在简历模块里，文件名同样从 `config.js` 读取。
+- 案例与服务信息统一维护在 `lib/studio.js`，过往项目经验不冒充工作室客户，避免披露未经授权的客户名称与精确业务指标。
+- 简历不再是网站公开页面；求职简历由 brain 维护。

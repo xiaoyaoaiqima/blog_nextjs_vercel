@@ -21,8 +21,8 @@ export default function Category({ categoryData, posts }) {
     <Layout>
       <div className={categoryStyles.container}>
         <div className={categoryStyles.categoryHeader}>
-          <Link href="/" className={categoryStyles.backLink}>
-            ← Back to Categories
+          <Link href="/blog" className={categoryStyles.backLink}>
+            返回技术博客
           </Link>
           <h1 className={categoryStyles.categoryTitle}>{categoryData.name}</h1>
           <p className={categoryStyles.categoryDescription}>
