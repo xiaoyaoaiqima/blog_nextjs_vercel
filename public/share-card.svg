@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#e8efe6"/>
+  <rect x="65" y="55" width="1070" height="520" rx="30" fill="#1d5241"/>
+  <path d="M735 420 870 188 968 337 1030 245 1100 420Z" fill="none" stroke="#a5c1a2" stroke-width="12" stroke-linejoin="round"/>
+  <text x="115" y="180" font-family="PingFang SC, Helvetica, sans-serif" font-size="60" font-weight="700" fill="#ffffff">小山科技工作室</text>
+  <text x="117" y="238" font-family="Helvetica, sans-serif" font-size="24" font-weight="600" letter-spacing="3" fill="#a5c1a2">XIAOSHAN STUDIO · FDE</text>
+  <text x="115" y="347" font-family="PingFang SC, Helvetica, sans-serif" font-size="40" fill="#ffffff">红书营销 Agent</text>
+  <text x="115" y="410" font-family="PingFang SC, Helvetica, sans-serif" font-size="40" fill="#ffffff">企业智脑 Agent</text>
+  <text x="117" y="510" font-family="PingFang SC, Helvetica, sans-serif" font-size="26" fill="#c9ddc8">企业 AI Agent 定制开发与落地</text>
+</svg>

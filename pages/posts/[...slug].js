@@ -1,16 +1,13 @@
 import Layout from "../../components/layout";
 import { getAllPostIds, getPostData, getPostCategory, getAdjacentPosts } from "../../lib/posts";
-import Head from "next/head";
+import { SITE_NAME, postPath, publicUrl } from "../../lib/seo";
 import Date from "../../components/date";
 import { Breadcrumb, AdjacentPosts } from "../../components/post-navigation";
 import utilStyles from "../../styles/utils.module.css";
 
 export default function Post({ postData, category, adjacentPosts }) {
   return (
-    <Layout>
-      <Head>
-        <title>{postData.title}</title>
-      </Head>
+    <Layout title={postData.title} description={postData.seoDescription} path={postPath(postData.id)} type="article" schema={{"@context":"https://schema.org","@type":"BlogPosting",headline:postData.title,description:postData.seoDescription,datePublished:postData.date,publisher:{"@type":"Organization",name:SITE_NAME},mainEntityOfPage:publicUrl(postPath(postData.id)) || undefined}}>
       <article>
         <Breadcrumb category={category} postTitle={postData.title} />
         <h1 className={utilStyles.headingXl}>{postData.title}</h1>

@@ -59,3 +59,10 @@ public/                 静态资源
 
 - 案例与服务信息统一维护在 `lib/studio.js`，过往项目经验不冒充工作室客户，避免披露未经授权的客户名称与精确业务指标。
 - 简历不再是网站公开页面；求职简历由 brain 维护。
+
+## SEO 与搜索收录
+
+- 正式域名为 https://www.samlin1010.top；如将来更换域名，可在 Vercel Production 环境设置 NEXT_PUBLIC_SITE_URL（含 https://，不含路径）。
+- 站点地图 /sitemap.xml 自动覆盖官网、项目案例、博客分类和公开文章；/robots.txt 关联该地图。
+- 本地及预览环境默认 noindex，未确认生产域名时也不会开放搜索收录，避免错误 canonical。
+- 发布后可在 Google Search Console、百度搜索资源平台验证域名并提交 sitemap；上述平台的验证与提交需单独操作。

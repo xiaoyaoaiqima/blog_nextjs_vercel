@@ -1,4 +1,3 @@
-import Head from "next/head";
 import Layout from "../../components/layout";
 import { getCategories, getPostsByCategory } from "../../lib/posts";
 import categoryStyles from "../../styles/categories.module.css";
@@ -18,7 +17,7 @@ export default function Category({ categoryData, posts }) {
   }
 
   return (
-    <Layout>
+    <Layout title={categoryData.name + " 技术博客"} description={categoryData.description + "，小山科技工作室技术文章与实践记录。"} path={"/category/" + categoryData.slug}>
       <div className={categoryStyles.container}>
         <div className={categoryStyles.categoryHeader}>
           <Link href="/blog" className={categoryStyles.backLink}>
